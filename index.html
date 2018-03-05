@@ -1,11 +1,11 @@
-﻿<!DOCTYPE html>
+<!DOCTYPE html>
 <html lang="en">
 <head>
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=Edge,chrome=1"/>
     <title>Permian Call Center</title>
     <script src="https://npmcdn.com/tether@1.2.4/dist/js/tether.min.js"></script>
-
+ <script src="https://code.jquery.com/jquery-3.2.1.min.js"></script>
     <link rel="stylesheet" type="text/css" href="css/bootstrap.min.css">
     <link rel="stylesheet" type="text/css" href="css/style.css">
     <link rel="stylesheet" href="css/autocomplete.css">
@@ -68,7 +68,6 @@
     </div>
 </nav>
 
-<form action="" method="post">
     <section id="titleSection">
         <div class="container">
             <h2>INTRODUCTION </h2><br>
@@ -180,7 +179,10 @@
                                     <label for="transferNo">No</label>
                                 </p>
                                 <p id="salesSubmit" style="display:none;">
-                                   <input class="btn btn-primary" type="submit" value="submit" required="required" />
+                                            
+
+
+                <input class="btn btn-primary" type="submit" value="submit" required="required" style="cursor: pointer"/>
 
 
 
@@ -191,10 +193,9 @@
                                     Is there anything else that I can help you with today?<br><br>
                                     (Wait for response; address any additional concerns.)<br><br>
                                     In that case, thank you for calling Weatherford. Have a great day!<br><br>
-                                    
-					 <input class="btn btn-primary" type="button" onClick="window.location.href=window.location.href" value="submit">
 
 
+ 			<input class="btn btn-primary" type="submit" value="submit" required="required" style="cursor: pointer"/>
                                 
 
 
@@ -348,7 +349,7 @@
 
     $('#typeSales').click(function(){
         $('#callRating').show();
-        $('input[name=callRank]').click(function() {
+        $('input[name=Permian_Call_Rating_All]').click(function() {
             $sales = $('#collapseSales');
 
             $sales.addClass('in show').attr('aria-expanded', 'true');
@@ -382,6 +383,23 @@
             $('#notTransferred').show();
         }
     });
+</script>
+
+<script>
+$form = $("#submit-form"); 
+$form.on("submit",function()
+{
+   alert("submitting..");
+   //do ajax
+   $.ajax({
+       url:<submit url>,
+       type:post,
+       success:function() {
+           location.reload();
+       }
+   });
+});
+$form.submit();
 </script>
 
 </body>
