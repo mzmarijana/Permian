@@ -1,0 +1,388 @@
+﻿<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=Edge,chrome=1"/>
+    <title>Permian Call Center</title>
+    <script src="https://npmcdn.com/tether@1.2.4/dist/js/tether.min.js"></script>
+
+    <link rel="stylesheet" type="text/css" href="css/bootstrap.min.css">
+    <link rel="stylesheet" type="text/css" href="css/style.css">
+    <link rel="stylesheet" href="css/autocomplete.css">
+    <script src="https://code.jquery.com/jquery-1.12.4.js"></script>
+    <script src="https://code.jquery.com/ui/1.12.1/jquery-ui.js"></script>
+    <script src="js/accountManager.js"></script>
+    <script src="js/emailFill.js"></script>
+
+    <style>
+        .btn {
+            border-radius: 0;
+            border: none;
+            padding: .5em 1em;
+        }
+        .btn-primary {
+            background-color: #ce1141;
+            color: #fff;
+        }
+        .btn-primary:hover {
+            background-color: #a51135;
+            color: #fff;
+            cursor: pointer;
+        }
+        table {
+            font-family: arial, sans-serif;
+            vertical-align: top;
+        }
+
+        td, th {
+            border: 1px solid #dddddd;
+            text-align: left;
+            padding: 8px 10px 8px 50px;
+        }
+
+        tr:nth-child(even) {
+            background-color: #FFFFFF;
+        }
+
+        .panel-description.col-sm-6:nth-child(odd), td:nth-child(1), th:nth-child(1) {
+            color: #ce1141;
+        }
+    </style>
+</head>
+
+
+<body>
+<form action="http://go.weatherford.com/l/29002/2018-03-05/82ftq3" method="post">
+<nav class="container">
+    <div class="navTop">
+        <div class="float-left" style="border-right:1px solid #e6e6e6; padding-top: 10px; padding-bottom: 11px;">
+            <a href="https://www.weatherford.com"><img src="http://storage.pardot.com/29002/5866/brand_template_d.jpg"></a>
+        </div>
+        <!--<div class="float-right" style="border-left:1px solid #e6e6e6;"><img src="images/icons/global.png"></div>-->
+        <div class="float-right" style="border-left:1px solid #e6e6e6; padding:10px 15px;">
+            <a href="javascript:void(0)" id="navToSocial"><img src="images/icons/social.png"></a></div>
+        <div class="clearfix" style="padding: 0;"></div>
+    </div>
+    <div class="navBottom">
+        <div id="pageTitle"><a href="#">Permian Call Center</a></div>
+    </div>
+</nav>
+
+<form action="" method="post">
+    <section id="titleSection">
+        <div class="container">
+            <h2>INTRODUCTION </h2><br>
+
+            <table style="width:100%">
+                <tr>
+                    <th>SCRIPT</th>
+                    <th>ACTION</th>
+
+                </tr>
+                <tr>
+                    <td style="vertical-align: top">
+                        <p> Hello, thank you for calling Weatherford. <br><br>My name is
+                            <input type="text" size="25" name="Permian_Call_Center____Operator_s_Name	" placeholder="Operator's Name" /><br> <br><br>How may I assist you today?<br>
+                    </td>
+                    <td>
+                        <p>Listen to caller and select the call type that applies:</p>
+                        <b>What type of call is this?</b><br><br>
+
+                        <input type="radio" name="Permian_Call_Type" value="Operations / Sales" id="typeSales">
+                        <label for="typeSales">Sales</label><br>
+
+                        <input type="radio" name="Permian_Call_Type" value="Careers" id="typeCareers">
+                        <label for="typeCareers">Careers / Employment</label><br>
+
+
+                        <input type="radio" name="Permian_Call_Type" value="Other" id="typeOther">
+                        <label for="typeOther">Other</label> <br>
+
+                        <br>
+
+                        <div id="callRating" style="display: none;">
+                            <b>Rate the call based on urgency:</b><br><br>
+                            <input id="urgent" type="radio" name="Permian_Call_Rating_All" value="urgent">
+                            <label for="urgent" style="color: red; font-weight: bold">URGENT</label><br>
+                            <input id="important" type="radio" name="Permian_Call_Rating_All" value="important">
+                            <label for="important" style="color: red">IMPORTANT</label><br>
+                            <input id="regular" type="radio" name="Permian_Call_Rating_All" value="regular">
+                            <label for="regular">REGULAR</label>
+                        </div>
+                        <br><br>
+
+                    </td>
+
+                </tr>
+            </table>
+        </div>
+    </section>
+
+    <section id="mainSection">
+        <div class="container">
+            <div class="panel-group" id="accordion">
+                <div class="panel panel-default">
+                    <a data-toggle="collapse" data-parent="#accordion" href="#collapseSales" class="collapsed">
+                        <div class="panel-heading">
+                            <span class="accordion-toggle"></span>
+                            <div class="accordion-icon">
+                                <img src="images/icons/Icons-_0004_WFT-_logo.png">
+                            </div>
+                            <h3 class="panel-title" data-parent="#accordion">
+                                Operations / Sales
+                            </h3>
+                        </div>
+                    </a>
+
+
+                    <div id="collapseSales" class="panel-collapse collapse">
+                        <div class="panel-body row">
+                            <div class="panel-description col-sm-6">
+                                <p><b>SCRIPT</b></p>
+                                <p>All right, allow me to get some additional information so we can properly address
+                                    your call.</p>
+                                <p>May I have your email address?</p>
+                                <p class="ui-widget">
+                                    <input id="email" type="email" name="email" placeholder="Email"/>
+                                </p>
+
+                                <p>(Validate contact info.)</p>
+                                <p><label>Contact Status:</label> <input id="contact-status"/></p>
+                                <p><label>First Name:</label> <input id="first-name" type="text" name="first_name" /></p>
+                                <p><label>Last Name:</label> <input id="last-name" type="text" name="last_name" /></p>
+                                <p class="ui-widget">
+                                    <label>Company:</label> <input id="tags" name="company"/>
+                                </p>
+                                <p><label>Job Title:</label> <input id="job-title" type="text" name="job_title" /></p>
+                                <p><label>Phone Number:</label> <input id="phone-number" type="text" name="phone"/></p>
+                                <p>What product are you interested in?</p>
+                                <p class="ui-widget">
+                                    <input id="product-interest" type="text" name="Permian_Product_Interest" placeholder="Product Interest"/>
+                                    <input id="product-segment" type="text" name="Permian_Product_Segment" style="visibility:hidden"/>
+                                </p>
+                                <p>Please hold while I transfer your call to our representative who will be able to help
+                                    with your request.</p>
+                            </div>
+                            <div class="panel-downloads col-sm-6">
+                                <p><b>ACTION</b></p>
+                                <p>Transfer the call to the following representative:</p>
+                                <div id="accountFound" style="display:none;">
+                                    <p id="accountManager"></p>
+                                </div>
+                                <div id="noAccount">
+                                    <p id="techSales"></p>
+                                    <p id="opsManager"></p>
+                                </div>
+                                <p>Was the call transferred?<br>
+                                    <input id="transferYes" type="radio" name="transfer" value="yes">
+                                    <label for="transferYes">Yes</label><br>
+                                    <input id="transferNo" type="radio" name="transfer" value="no">
+                                    <label for="transferNo">No</label>
+                                </p>
+                                <p id="salesSubmit" style="display:none;">
+                                   <input class="btn btn-primary" type="submit" value="submit" required="required" />
+
+
+
+                                </p>
+                                <p id="notTransferred" style="display:none;">
+                                    Unfortunately, our sales representative is not available at the moment, but he will get back to you as soon as possible. Would you prefer to be contacted by email or telephone?<br><br>
+                                    (Wait for response and acknowledge option.)<br><br>
+                                    Is there anything else that I can help you with today?<br><br>
+                                    (Wait for response; address any additional concerns.)<br><br>
+                                    In that case, thank you for calling Weatherford. Have a great day!<br><br>
+                                    
+					 <input class="btn btn-primary" type="button" onClick="window.location.href=window.location.href" value="submit">
+
+
+                                
+
+
+</p>
+                                <div class="row">
+                                    <span class="col-7"></span>
+                                    <span class="col-5"><span style="float:right;"></span></span>
+                                </div>
+                            </div>
+
+                        </div>
+                    </div>
+
+                    <div class="panel panel-default">
+                        <a data-toggle="collapse" data-parent="#accordion" href="#collapseCareers" class="collapsed">
+
+                            <div class="panel-heading">
+                                <span class="accordion-toggle"></span>
+
+                                <div class="accordion-icon">
+                                    <img src="images/icons/Icons-_0007_PPT-Presentations.png">
+                                </div>
+                                <h3 class="panel-title">
+                                    Career / Employment
+                                </h3>
+                            </div>
+                        </a>
+                        <div id="collapseCareers" class="panel-collapse collapse">
+                            <div class="panel-body row">
+                                <div class="panel-description col-sm-6">
+                                    <p><b>SCRIPT</b><br><br>
+                                    If you wish to apply for a job with Weatherford, please visit
+                                    weatherford.com/careers to explore
+                                    opportunities and to contact our recruiting team.
+
+                                    <br><br>Thank you for calling.
+                                    <br>
+                                    <br>
+                                </div>
+                                <div class="panel-downloads col-sm-6">
+                                    <p><b>ACTION</b></p>
+                                    <div class="row">
+                                        <span class="col-7"></span>
+                                        <span class="col-5"><span style="float:right;"> </span></span>
+                                    </div>
+                                    <input class="btn btn-primary" type="button" onClick="window.location.href=window.location.href" value="Refresh">
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="panel panel-default">
+                        <a data-toggle="collapse" data-parent="#accordion" href="#collapseOther" class="collapsed">
+                            <div class="panel-heading">
+                                <span class="accordion-toggle"></span>
+                                <div class="accordion-icon">
+                                    <img src="images/icons/Icons-_0003_Email-Signature.png">
+                                </div>
+                                <h3 class="panel-title">
+                                    Other
+                                </h3>
+                            </div>
+                        </a>
+                        <div id="collapseOther" class="panel-collapse collapse">
+                            <div class="panel-body row">
+                                <div class="panel-description col-sm-6">
+                                    <p><b>SCRIPT</b></p>
+                                    <p>All right, allow me to get some additional information so we can properly address
+                                        your call.</p>
+
+                                    <p> What company are you with? </p>
+
+                                    <input type="text" name="title" placeholder="Company"/>
+                                    <p> What is your first and last name? </p>
+
+                                    <input type="text" name="first" placeholder="First"/><br><br>
+
+                                    <input type="text" name="last" placeholder="Last"/>
+
+                                    <p>May I have your email address?</p>
+
+                                    <input type="email" name="email2" placeholder="Email"/>
+
+                                    <br>
+
+                                    <p>What is your job title?</p>
+
+                                    <input type="text" name="title" placeholder="Job Title"/>
+
+                                    <p> Call Notes </p>
+                                    <textarea rows="4" cols="50"></textarea>
+
+                                    <p>Your request has been submitted and a representative will contact you shortly.
+                                        Thank you for calling Weatherford. Have a great day! </p>
+                                </div>
+                                <div class="panel-downloads col-sm-6">
+                                    <p><b>ACTION</b></p>
+                                    <div class="row">
+                                        <span class="col-7"></span>
+                                        <span class="col-5"><span style="float:right;"> </span></span>
+                                    </div>
+                                    <input class="btn btn-primary" type="submit" accesskey="s" onClick="window.location.href=window.location.href">
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+            </div>
+        </div>
+    </section>
+</form>
+
+<script src="js/bootstrap.min.js"></script>
+    <script src="js/productSegment.js"></script>
+
+<script>
+    $("#tags").on("change", function () {
+        var acc = "";
+        var input = $("#tags").val().toLowerCase();
+
+        $.getJSON("data.json", function (json) {
+            json.forEach(function (value) {
+                if (input === value.Account.toLowerCase()) {
+                    acc = "<b>Account Manager</b><br>" + value.AccountManager.Name + "<br>" + value.AccountManager.PhoneNumber + "<br>" + value.AccountManager.Email;
+
+                    $("#accountFound").show();
+                    $("#accountFound #accountManager").html(acc);
+                }
+                else {
+
+                }
+            });
+        });
+    });
+
+
+</script>
+<script>
+    $('#typeCareers').click(function(){
+        $('#callRating').hide();
+        $careers = $('#collapseCareers');
+
+        $careers.addClass('in show').attr('aria-expanded', 'true');
+        $careers.prev('a').removeClass('collapsed');
+        setTimeout(function () {
+            var location = $careers.offset().top;
+            $('html, body').animate({scrollTop: location}, 500);
+        }, 50);
+    });
+
+    $('#typeSales').click(function(){
+        $('#callRating').show();
+        $('input[name=callRank]').click(function() {
+            $sales = $('#collapseSales');
+
+            $sales.addClass('in show').attr('aria-expanded', 'true');
+            $sales.prev('a').removeClass('collapsed');
+            setTimeout(function () {
+                var location = $sales.offset().top - 200;
+                $('html, body').animate({scrollTop: location}, 500);
+            }, 50);
+        });
+    });
+
+    $('#typeOther').click(function(){
+        $('#callRating').hide();
+        $other = $('#collapseOther');
+
+        $other.addClass('in show').attr('aria-expanded','true');
+        $other.prev('a').removeClass('collapsed');
+        setTimeout(function(){
+            var location =  $other.offset().top - 200;
+            $('html, body').animate({scrollTop: location}, 500);
+        },50);
+    });
+
+    $('input[name=transfer]').click(function(){
+        if($(this).val() === 'yes'){
+            $('#salesSubmit').show();
+            $('#notTransferred').hide();
+        }
+        else {
+            $('#salesSubmit').hide();
+            $('#notTransferred').show();
+        }
+    });
+</script>
+
+</body>
+</html>
